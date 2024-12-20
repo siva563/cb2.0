@@ -5,7 +5,7 @@ const AdminDash = () => {
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
   const [email, setEmail] = useState('');
-  const [showForm, setShowForm] = useState(false); // State to toggle between dashboard and form
+  const [showForm, setShowForm] = useState(false); 
   const navigate = useNavigate();
 
   const handleSubmit = () => {

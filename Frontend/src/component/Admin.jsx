@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Admin.css";
 
+
 const Admin = () => {
   const [focus, setFocus] = useState("");
   const [credentials] = useState({ username: "admin", password: "admin123" });
@@ -33,9 +34,22 @@ const Admin = () => {
   };
 
   return (
-    <div className="container">
-      <nav className="navbar navbar-expand-sm bg-dark navbar-dark"></nav>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    {/* Navbar */}
+    <nav style={styles.navbar}>
+      <div style={styles.navbarContent}>
+        <h3 style={styles.navbarBrand}>CodeBegun</h3>
+        <h3>Welcome!</h3>
+        <ul style={styles.navbarMenu}>
+          {/* <li><a href="/" style={styles.navbarLink}>AdminPage</a></li> */}
+          {/* <li><a href="/" style={styles.navbarLink}></a></li> */}
+          <li><a href="/user-login" style={styles.navbarLink}>User Login</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
       <form onSubmit={handleSubmit}>
+        <div class="adminlogin"><h3>Admin Login</h3></div>
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -106,7 +120,38 @@ const Admin = () => {
       <div className="paw-l"></div>
       <div className="paw-r"></div>
     </div>
+    </div>
   );
 };
 
 export default Admin;
+
+const styles = {
+  navbar: {
+    backgroundColor: '#343a40',
+    padding:'25px 20px',
+  },
+  navbarContent: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  navbarBrand: {
+    color: '#fff',
+    fontSize: '24px',
+    fontWeight: 'bold',
+  },
+  navbarMenu: {
+    listStyle: 'none',
+    display: 'flex',
+    margin: 0,
+    padding: 0,
+  },
+  navbarLink: {
+    color: '#fff',
+    padding: '0 15px',
+    textDecoration: 'none',
+    fontSize: '16px',
+  },
+  
+}

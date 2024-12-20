@@ -1,3 +1,7 @@
+.userlogin,#ul{
+    color:firebrick
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -5,7 +9,7 @@
     font-family: "Poppins", sans-serif;
   }
   body {
-    background-color: white;
+    background-color:white;
   }
   .container {
     height: 31.25em;
@@ -15,15 +19,11 @@
     top: 50%;
     left: 50%;
   }
-  .navbarcontent,h3{
-    color:skyblue;
-  }
-  
-  form {
+  .uform {
     width: 23.75em;
     height: 18.75em;
-    background-color: #ffffff;
-    border: solid black 2px;
+    background-color:white;
+    border: solid purple 2px;
     position: absolute;
     transform: translate(-50%, -50%);
     top: calc(50% + 3.1em);
@@ -34,49 +34,45 @@
     justify-content: center;
     border-radius: 0.5em;
   }
-  form label {
+  .uform label {
     display: block;
     margin-bottom: 0.2em;
     font-weight: 600;
     color: #2e0d30;
   }
-  form input {
+  .uform input {
     font-size: 0.95em;
     font-weight: 400;
-    color: #3f3554;
+    color: grey;
     padding: 0.3em;
     border: none;
     border-bottom: 0.12em solid #3f3554;
     outline: none;
   }
-  form input:focus {
-    border-color:skyblue;
+  .uform input:focus {
+    border-color:purple;
   }
-  form input:not(:last-child) {
+  .uform input:not(:last-child) {
     margin-bottom: 0.9em;
   }
-  form button {
+  .uform button {
     font-size: 0.95em;
     padding: 0.8em 0;
     border-radius: 2em;
     border: none;
     outline: none;
-    background-color: skyblue;
-    color: #2e0d30;
+    background-color:plum;
+    color: firebrick;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.15em;
     margin-top: 0.8em;
   }
-  .adminlogin,h3{
-    text-align:center;
-    padding-bottom: 5px;
-  }
-  .panda-face {
+  .panda-face2 {
     height: 7.5em;
     width: 8.4em;
     background-color: #ffffff;
-    border: 0.18em solid #2e0d30;
+    border: 0.18em solid purple;
     border-radius: 7.5em 7.5em 5.62em 5.62em;
     position: absolute;
     top: 2em;
@@ -84,60 +80,60 @@
     left: 0;
     right: 0;
   }
-  .ear-l,
-  .ear-r {
-    background-color: #3f3554;
+  .ear-left,
+  .ear-right {
+    background-color: purple;
     height: 2.5em;
     width: 2.81em;
-    border: 0.18em solid #2e0d30;
+    border: 0.18em solid purple;
     border-radius: 2.5em 2.5em 0 0;
     top: 1.75em;
     position: absolute;
   }
-  .ear-l {
+  .ear-left {
     transform: rotate(-38deg);
     left: 10.75em;
   }
-  .ear-r {
+  .ear-right {
     transform: rotate(38deg);
     right: 10.75em;
   }
-  .blush-l,
-  .blush-r {
-    background-color:skyblue;
+  .blush-lf,
+  .blush-rg {
+    background-color:firebrick;
     height: 1em;
     width: 1.37em;
     border-radius: 50%;
     position: absolute;
     top: 4em;
   }
-  .blush-l {
+  .blush-lf {
     transform: rotate(25deg);
     left: 1em;
   }
-  .blush-r {
+  .blush-rg {
     transform: rotate(-25deg);
     right: 1em;
   }
-  .eye-l,
-  .eye-r {
-    background-color: #3f3554;
+  .eye-lf,
+  .eye-rg {
+    background-color:purple;
     height: 2.18em;
     width: 2em;
     border-radius: 2em;
     position: absolute;
     top: 2.18em;
   }
-  .eye-l {
+  .eye-lf {
     left: 1.37em;
     transform: rotate(-20deg);
   }
-  .eye-r {
+  .eye-rg {
     right: 1.37em;
     transform: rotate(20deg);
   }
-  .eyeball-l,
-  .eyeball-r {
+  .eyeball-lf,
+  .eyeball-rg {
     height: 0.6em;
     width: 0.6em;
     background-color: #ffffff;
@@ -147,16 +143,16 @@
     top: 0.6em;
     transition: 1s all;
   }
-  .eyeball-l {
+  .eyeball-lf {
     transform: rotate(20deg);
   }
-  .eyeball-r {
+  .eyeball-rg {
     transform: rotate(-20deg);
   }
-  .nose {
+  .nose1 {
     height: 1em;
     width: 1em;
-    background-color: #3f3554;
+    background-color: purple;
     position: absolute;
     top: 4.37em;
     margin: auto;
@@ -165,69 +161,69 @@
     border-radius: 1.2em 0 0 0.25em;
     transform: rotate(45deg);
   }
-  .nose:before {
+  .nose1:before {
     content: "";
     position: absolute;
-    background-color: #3f3554;
+    background-color: purple;
     height: 0.6em;
     width: 0.1em;
     transform: rotate(-45deg);
     top: 0.75em;
     left: 1em;
   }
-  .mouth,
-  .mouth:before {
+  .mouth1,
+  .mouth1:before {
     height: 0.75em;
     width: 0.93em;
     background-color: transparent;
     position: absolute;
     border-radius: 50%;
-    box-shadow: 0 0.18em #3f3554;
+    box-shadow: 0 0.18em purple;
   }
-  .mouth {
+  .mouth1 {
     top: 5.31em;
     left: 3.12em;
   }
-  .mouth:before {
+  .mouth1:before {
     content: "";
     position: absolute;
     left: 0.87em;
   }
-  .hand-l,
-  .hand-r {
-    background-color: #3f3554;
+  .hand-lf,
+  .hand-rg {
+    background-color: purple;
     height: 2.81em;
     width: 2.5em;
-    border: 0.18em solid #2e0d30;
+    border: 0.18em solid purple;
     border-radius: 0.6em 0.6em 2.18em 2.18em;
     transition: 1s all;
     position: absolute;
     top: 8.4em;
   }
-  .hand-l {
+  .hand-lf {
     left: 7.5em;
   }
-  .hand-r {
+  .hand-rg {
     right: 7.5em;
   }
-  .paw-l,
-  .paw-r {
-    background-color: #3f3554;
+  .paw-lf,
+  .paw-rg {
+    background-color: purple;
     height: 3.12em;
     width: 3.12em;
-    border: 0.18em solid #2e0d30;
+    border: 0.18em solid purple;
     border-radius: 2.5em 2.5em 1.2em 1.2em;
     position: absolute;
     top: 26.56em;
   }
-  .paw-l {
+  .paw-lf {
     left: 10em;
   }
-  .paw-r {
+  .paw-rg {
     right: 10em;
   }
-  .paw-l:before,
-  .paw-r:before {
+  .paw-lf:before,
+  .paw-rg:before {
     position: absolute;
     content: "";
     background-color: #ffffff;
@@ -237,8 +233,8 @@
     left: 0.55em;
     border-radius: 1.56em 1.56em 0.6em 0.6em;
   }
-  .paw-l:after,
-  .paw-r:after {
+  .paw-lf:after,
+  .paw-rg:after {
     position: absolute;
     content: "";
     background-color: #ffffff;
