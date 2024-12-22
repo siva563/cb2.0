@@ -48,22 +48,19 @@ const UserDash = () => {
   };
 
   return (
-    <div class="userdash" style={styles.container}>
-      {/* Navigation Bar */}
-      <header style={styles.navbar}>
-        <h4 style={styles.brand}>Your Dashboard</h4>
-        <nav style={styles.navLinks}>
-          <button
-            onClick={() => setShowForm(true)}
-            style={styles.navButton}
-          >
-            Profile
-          </button>
-          <button onClick={() => navigate("/user-login")} style={styles.logoutButton}>
-            Logout
-          </button>
-        </nav>
-      </header>
+    <div style={styles.userdash}>
+    {/* Navigation Bar */}
+    <header style={styles.navbar}>
+      <h4 style={styles.brand}>Your Dashboard</h4>
+      <nav style={styles.navLinks}>
+        <button onClick={() => navigate("/profile-form")} style={styles.navButton}>
+          Profile
+        </button>
+        <button onClick={() => navigate("/user-login")} style={styles.logoutButton}>
+          Logout
+        </button>
+      </nav>
+    </header>
 
       {/* Main Content */}
       <main style={styles.main}>
@@ -81,7 +78,7 @@ const UserDash = () => {
         )}
         {showForm && (
           <div style={styles.modal}>
-            <form style={styles.form} onSubmit={handleSubmit}>
+            <form class="pform" style={styles.form} onSubmit={handleSubmit}>
               <h3>Student Registration Form</h3>
               <label>First Name:</label>
               <input
@@ -238,124 +235,154 @@ const UserDash = () => {
 export default UserDash;
 
 const styles = {
-    userdash: {
-      fontFamily: "Arial, sans-serif",
-      backgroundColor: "#f8f9fa",
-      minHeight: "100vh",
-      display: "flex",
-      flexDirection: "column",
-    },
-    navbar: {
-      backgroundColor: "#343a40",
-      color: "white",
-      padding: "15px 20px",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-    },
-    brand: {
-      margin: 0,
-      fontSize: "24px",
-    },
-    navLinks: {
-      display: "flex",
-      gap: "10px",
-    },
-    navButton: {
-      padding: "10px 15px",
-      backgroundColor: "#0056b3",
-      border: "none",
-      color: "white",
-      fontSize: "16px",
-      borderRadius: "5px",
-      cursor: "pointer",
-    },
-    logoutButton: {
-      padding: "10px 15px",
-      backgroundColor: "#dc3545",
-      border: "none",
-      color: "white",
-      fontSize: "16px",
-      borderRadius: "5px",
-      cursor: "pointer",
-    },
-    main: {
-      textAlign: "center",
-      padding: "50px 20px",
-    },
-    heading: {
-      fontSize: "28px",
-      marginBottom: "20px",
-      color: "#343a40",
-    },
-    text: {
-      fontSize: "18px",
-      marginBottom: "30px",
-      color: "#6c757d",
-    },
-    featuresContainer: {
-      display: "flex",
-      justifyContent: "center",
-      gap: "20px",
-      flexWrap: "wrap",
-    },
-    featureCard: {
-      backgroundColor: "white",
-      border: "1px solid #ddd",
-      borderRadius: "10px",
-      padding: "20px",
-      width: "250px",
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-      textAlign: "center",
-      cursor: "pointer",
-      transition: "transform 0.3s, box-shadow 0.3s",
-    },
-    featureCardHover: {
-      transform: "scale(1.05)",
-      boxShadow: "0 6px 8px rgba(0, 0, 0, 0.15)",
-    },
-    formcontainer: {
-        maxWidth: '500px',
-        margin: '50px auto',
-        padding: '20px',
-        backgroundColor: '#f5f5f5',
-        borderRadius: '10px',
-        boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-        textAlign: 'center',
-      },
-    formVisible: {
-      display:"block", // Set to visible when form is active
-    },
-    submitButton: {
-      marginTop: "20px",
-      padding: "10px 20px",
-      backgroundColor: "#28a745",
-      color: "white",
-      border: "none",
-      borderRadius: "5px",
-      cursor: "pointer",
-    },
-    tableContainer: {
-      display: "none", // Initially hidden
-      marginTop: "20px",
-      padding: "20px",
-      backgroundColor: "#ffffff",
-      borderRadius: "10px",
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    },
-    tableVisible: {
-      display: "block", // Set to visible when the table is active
-    },
-    editButton: {
-      padding: "10px 15px",
-      backgroundColor: "#007bff",
-      color: "white",
-      border: "none",
-      borderRadius: "5px",
-      cursor: "pointer",
-    },
-    max:{
-        margin:"20px"
-    }
+  userdash: {
+    fontFamily: "Arial, sans-serif",
+    backgroundColor: "#f8f9fa",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+  },
+  navbar: {
+    backgroundColor: "#343a40",
+    color: "white",
+    padding: "15px 20px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  brand: {
+    margin: 0,
+    fontSize: "24px",
+  },
+  navLinks: {
+    display: "flex",
+    gap: "10px",
+  },
+  navButton: {
+    padding: "10px 15px",
+    backgroundColor: "#0056b3",
+    border: "none",
+    color: "white",
+    fontSize: "16px",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  logoutButton: {
+    padding: "10px 15px",
+    backgroundColor: "#dc3545",
+    border: "none",
+    color: "white",
+    fontSize: "16px",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  main: {
+    textAlign: "center",
+    padding: "50px 20px",
+  },
+  heading: {
+    fontSize: "28px",
+    marginBottom: "20px",
+    color: "#343a40",
+  },
+  featuresContainer: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+    flexWrap: "wrap",
+  },
+  featureCard: {
+    backgroundColor: "white",
+    border: "1px solid #ddd",
+    borderRadius: "10px",
+    padding: "20px",
+    width: "250px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    textAlign: "center",
+    cursor: "pointer",
+    transition: "transform 0.3s, box-shadow 0.3s",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    maxWidth: "500px",
+    margin: "0 auto",
+    padding: "20px",
+    backgroundColor: "#ffffff",
+    borderRadius: "10px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    fontSize: "16px",
+    color: "#343a40",
+  },
+  formLabel: {
+    display: "block",
+    marginBottom: "8px",
+    fontWeight: "bold",
+    textAlign: "left",
+    width: "100%",
+  },
+  formInput: {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "15px",
+    border: "1px solid #ddd",
+    borderRadius: "5px",
+    fontSize: "14px",
+    outline: "none",
+    transition: "border-color 0.3s",
+  },
+  formInputFocus: {
+    borderColor: "#0056b3",
+  },
+  radioGroup: {
+    display: "flex",
+    gap: "15px",
+    marginBottom: "15px",
+  },
+  radioLabel: {
+    fontWeight: "normal",
+  },
+  formSelect: {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "15px",
+    border: "1px solid #ddd",
+    borderRadius: "5px",
+    fontSize: "14px",
+    outline: "none",
+  },
+  submitButton: {
+    padding: "12px 20px",
+    backgroundColor: "#28a745",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    fontSize: "16px",
+    cursor: "pointer",
+    marginTop: "15px",
+    transition: "background-color 0.3s",
+  },
+  submitButtonHover: {
+    backgroundColor: "#218838",
+  },
+  userData: {
+    maxWidth: "500px",
+    margin: "20px auto",
+    padding: "20px",
+    backgroundColor: "#f8f9fa",
+    borderRadius: "10px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    textAlign: "left",
+  },
+  editButton: {
+    padding: "10px 15px",
+    backgroundColor: "#007bff",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
   };
   

@@ -39,7 +39,7 @@ const Admin = () => {
     <nav style={styles.navbar}>
       <div style={styles.navbarContent}>
         <h3 style={styles.navbarBrand}>CodeBegun</h3>
-        <h3>Welcome!</h3>
+        <h3>Welcome to Admin's Page!</h3>
         <ul style={styles.navbarMenu}>
           {/* <li><a href="/" style={styles.navbarLink}>AdminPage</a></li> */}
           {/* <li><a href="/" style={styles.navbarLink}></a></li> */}
