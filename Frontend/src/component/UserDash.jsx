@@ -79,7 +79,8 @@ const UserDash = () => {
         {showForm && (
           <div style={styles.modal}>
             <form class="pform" style={styles.form} onSubmit={handleSubmit}>
-              <h3>Student Registration Form</h3>
+              <h3 class="box">Student Registration Form</h3>
+              <br  />
               <label>First Name:</label>
               <input
                 type="text"
@@ -302,6 +303,9 @@ const styles = {
     cursor: "pointer",
     transition: "transform 0.3s, box-shadow 0.3s",
   },
+
+ 
+
   form: {
     display: "flex",
     flexDirection: "column",
@@ -310,11 +314,11 @@ const styles = {
     maxWidth: "500px",
     margin: "0 auto",
     padding: "20px",
-    backgroundColor: "#ffffff",
-    borderRadius: "10px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    backgroundColor: "transparent", // Ensure no background color for seamless blending
     fontSize: "16px",
     color: "#343a40",
+   border:"none",
+    boxShadow: "none", // Remove any shadow
   },
   formLabel: {
     display: "block",
