@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const AdminDash = () => {
   const [name, setName] = useState('');
@@ -8,13 +9,22 @@ const AdminDash = () => {
   const [showForm, setShowForm] = useState(false); 
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!name || !mobile || !email) {
       alert('All fields are required!');
       return;
     }
 
     const generatedPassword = Math.random().toString(36).slice(-8);
+    const userData = {
+      name,
+      mobile,
+      email,
+      password: generatedPassword
+    };
+    try {
+      // Send POST request to Spring Boot backend
+      await axios.post('http://192.168.0.105:8080/api/user', userData);
     const emailBody = `
       Hello ${name},
 
@@ -41,6 +51,11 @@ const AdminDash = () => {
 
     // Redirect to the admin dashboard after successful form submission
     navigate('/admin-dash');
+  } catch (error) {
+    console.error('There was an error creating the user:', error);
+    alert('Failed to create user. Please try again.');
+  }
+    
   };
 
   return (
@@ -63,6 +78,7 @@ const AdminDash = () => {
       </button>
 
       {/* Conditional rendering of the dashboard or the registration form */}
+      
       <div style={styles.container}>
         {showForm ? (
           <div>
