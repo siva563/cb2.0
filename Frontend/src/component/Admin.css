@@ -15,6 +15,10 @@
     top: 50%;
     left: 50%;
   }
+  .navbarcontent,h3{
+    color:skyblue;
+  }
+  
   form {
     width: 23.75em;
     height: 18.75em;
@@ -46,7 +50,7 @@
     outline: none;
   }
   form input:focus {
-    border-color: pink;
+    border-color:skyblue;
   }
   form input:not(:last-child) {
     margin-bottom: 0.9em;
@@ -57,12 +61,16 @@
     border-radius: 2em;
     border: none;
     outline: none;
-    background-color: pink;
+    background-color: skyblue;
     color: #2e0d30;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.15em;
     margin-top: 0.8em;
+  }
+  .adminlogin,h3{
+    text-align:center;
+    padding-bottom: 5px;
   }
   .panda-face {
     height: 7.5em;
@@ -96,7 +104,7 @@
   }
   .blush-l,
   .blush-r {
-    background-color: #ff8bb1;
+    background-color:skyblue;
     height: 1em;
     width: 1.37em;
     border-radius: 50%;
